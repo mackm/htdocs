@@ -48,4 +48,4 @@ $sites['swiftsurepreview2.com'] = 'www.earthboxinn.com';
 #$sites['swiftsurepreview3.com'] = 'www.birdrockhotel.com';
 $sites['www.swiftsurepreview3.com'] = 'www.swiftsuremarketing.com';
 $sites['swiftsurepreview3.com'] = 'www.swiftsuremarketing.com';
-$sites['localhost'] = 'www.earthboxinn.com';
+$sites['localhost'] = 'www.visitsanjuans.com';
