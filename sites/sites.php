@@ -42,8 +42,7 @@
 $sites['www.swiftsurepreview1.com'] = 'www.visitsanjuans.com';
 $sites['visitsanjuans.com'] = 'www.visitsanjuans.com';
 $sites['swiftsurepreview1.com'] = 'www.visitsanjuans.com';
-$sites['www.swiftsurepreview2.com'] = 'www.earthboxinn.com';
-$sites['swiftsurepreview2.com'] = 'www.earthboxinn.com';
+$sites['earthboxinn.com'] = 'www.earthboxinn.com';
 $sites['www.swiftsurepreview3.com'] = 'www.birdrockhotel.com';
 $sites['swiftsurepreview3.com'] = 'www.birdrockhotel.com';
 $sites['www.swiftsurepreview3.com'] = 'www.swiftsuremarketing.com';
