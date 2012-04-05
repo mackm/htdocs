@@ -5,3 +5,5 @@ sites/www.swiftsuremarketing.com
 .gitignore
 .htaccess
 DS_Store
+mysql_admin
+

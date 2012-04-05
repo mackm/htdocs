@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<title>Reservation Nexus Guest Management Login</title>
+<link rel="shortcut icon" href="https://resnexus.com/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="https://resnexus.com/style.css" />
+<link rel="print" type="text/css" href="https://resnexus.com/print.css" />
+</head>
+<script src="WebResource.axd"></script>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script>
+
+$(document).ready(function() {
+$.get('https://reserve1.resnexus.com/resnexus/login.aspx', function(data) {
+  	$('body').html(data);
+	loadSubmitLoginForm();
+	});
+});
+
+
+function loadSubmitLoginForm()
+{
+	resObjs = jQuery('script');
+	title = $('title');
+	form1 = $('form')
+	form1.attr("action","https://reserve1.resnexus.com/resnexus/login.aspx");
+	$('src*="resNeObjs"').each(function(index) {
+		src = $(this).attr("src");
+	});
+	Website = $('#Website');
+	Website.attr("value","www.harrisonhousesuites.com");
+	postBackObj = new WebForm_PostBackOptions('Go', "", true, "", "", false, false)
+	WebForm_DoPostBackWithOptions(postBackObj);
+}
+</script>
+
+<body target='login2'>
+<div id=control></div>
+</body>
+</html>
