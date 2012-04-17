@@ -6,6 +6,7 @@ core = 7.x
 engine = phptemplate
 
 stylesheets[all][] = css/fusion-starter-style.css
+stylesheets[all][] = css/fusion-starter-swiftsure.css
 
 ; --------------------------------------------------------------------------------
 ; This provides support for the Fusion Accelerator suite.  
