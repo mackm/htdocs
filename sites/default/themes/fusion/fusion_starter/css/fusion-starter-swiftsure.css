@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/* CSS Document */
+
+#page {
+	padding: 0 20px 0 20px;
+}
+#header-group-inner {
+	margin-left:20px;
+	margin-right:60px;
+}
+
+#page .grid12-12 #block-system-navigation.grid12-12{
+	float:left;
+	margin: 0 175px 0 95px;
+    position: relative;
+    top: -24px;
+	background-color:#D2EEE0;
+	font-family:"Trebuchet MS", Arial, Helvetica, sans-serif;
+	margin-right:175px !important;
+}
+
+#block-system-navigation ul {
+	font-size:18px;
+	margin: 0.25em 0 0.25em 0.5em;
+	
+}
+
+#block-system-navigation ul li {
+	display:inline;
+	
+}
+
+#content-group #content-group-inner{
+	
+}
