@@ -1,0 +1,6 @@
+#!/bin/bash 
+cd /var/www/html/sites/www.visitsanjuans.com/files
+git add .
+git commit -m "cron update of files directory"
+git push
+
