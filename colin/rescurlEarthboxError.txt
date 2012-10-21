@@ -1,2 +1,0 @@
-2012-02-27 12:21:54: Missing String in curl response -> url: http://reservation.worldweb.com/Bookings-nr105/booking-list.html -> checkPageString: img src="https://secure.worldweb.com/Bookings-ClientTemplates/earthboxmotel/ -> unlinkCsv: csv/earthboxinn_load_webworld_3.csv 
-2012-02-27 12:23:22: Missing String in curl response -> url:  -> checkPageString: td class="orrs_headertext" -> unlinkCsv:  
