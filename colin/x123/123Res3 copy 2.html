@@ -1,0 +1,442 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+<title>123ResHmtl</title>
+</head>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+
+<script>
+
+function daysAvailable(startDate,daysChecked)
+{
+debug.append("<br>daysAvailable: " + startDate + " daysChecked:" + daysChecked);
+for (i=1; i<=daysChecked; i++)
+	{
+	thisDate = changeDate(startDate,i-1);	
+	thisDateMili = Date.parse(thisDate);
+//	debug.append("<br>" + stopDateMili + "<br>" + thisDateMili);
+	if (thisDateMili > stopDateMili)
+		{
+		debug.append("<br>stop run");
+		return "stop";
+		}
+	else
+		{
+		printDate = formatPrintDate(thisDate);
+		
+		submitForm.append("<div class=neo><input type=checkbox name=avail checked></div>");
+
+		debug.append("<br>" + i + ": " + printDate);
+		}
+	}
+}
+
+$(document).ready(function() {
+debug = $("#debug");
+submitForm = $("#submitForm");
+debug.css("text-align","right");	
+$("iframe").bind('load',function() {
+	var id = $(this).attr("id");
+	var contents = $(this).contents().find('body').html();
+	if (id=='resFrame')
+		{
+
+		if (iDay == 14)
+			{
+			iDay = 0;
+			daysChecked = 14;	
+			}	
+
+		startPos = contents.indexOf("Your travel summary:", 0);
+		if (startPos > 1)
+			{
+			noVacancy = 0;	
+			daysAvailableReturn = daysAvailable(checkInDate_date,daysChecked);
+			if (daysChecked == 1)
+				{
+				iDay = iDay + 1;
+				}
+	
+			if (daysAvailableReturn == "stop")
+				{
+				debug.append("finished run!!!");	
+				}
+			else	
+				{
+				checkOutDate_date = changeDate(checkOutDate_date,-1);
+				run();
+				}
+			}
+		else
+			{
+	
+			if (daysChecked ==1)
+				{
+				checkOutDate_date = changeDate(checkOutDate_date,-1);
+				submitForm.append("<div class=neo><input type=checkbox name=avail></div>");	
+				iDay = iDay + 1;
+				}
+			else
+				{	
+				// no vacancy start daily check
+				noVacancy = 1;
+				iDay = 1;
+				daysChecked = 1;
+				checkOutDate_date = changeDate(checkOutDate_date,-15);
+				}
+			run();
+			}
+		}
+	});
+periodsToCheck = 12;	
+daysChecked = 14;
+now = new Date();
+checkOutDate_date = now;
+stopDate();
+checkOutDate_date = changeDate(checkOutDate_date,70);
+stopDateMili = Date.parse(stopDate_date);
+formLoaded = 0;
+noVacancy = 0;
+iDay = 0;
+run();
+});
+
+
+function stopDate()
+{
+var days = periodsToCheck * daysChecked;
+stopDate_date = changeDate(checkOutDate_date,days);
+debug.append("<br>stopDate: " + stopDate_date);
+}
+
+
+function run()
+{
+checkInDate_date = changeDate(checkOutDate_date,1);
+checkInDate_input = formatSearchDate(checkInDate_date);
+//debug.append("<br>checkInDate_input: " + checkInDate_input);
+checkOutDate_date = changeDate(checkInDate_date,daysChecked);
+//debug.append("<br>checkOutDate_date2: " + checkOutDate_date);
+checkOutDate_input = formatSearchDate(checkOutDate_date);
+//debug.append("<br>checkOutDate_input: " + checkOutDate_input);
+
+debug.append("<br>iDay : " + iDay);
+	
+// && iDay < 10	
+
+if (formLoaded==1)
+	{
+		
+	if (noVacancy ==1)
+	{
+		debug.append("<br>nv checkInDate_date: " + checkInDate_date);
+		debug.append("<br>nv checkOutDate_date: " + checkOutDate_date);
+		debug.append("<br>nv checkInDate_input: " + checkInDate_input);
+		debug.append("<br>nv checkOutDate_input: " + checkOutDate_input);
+	}
+	
+//	alert("continue...");		
+	$("#ctl00_Main_availability_ctl00__checkInDate_date").val(checkInDate_input);
+	$("#ctl00_Main_availability_ctl00__checkOutDate_date").val(checkOutDate_input);
+	$("#ctl00_Main_availability_ctl00__submit").trigger('click');
+	}
+else if (formLoaded === 0)
+	{
+//	alert("do resSearch...");		
+	doResSearch();
+	}
+}
+
+
+function changeDate(d,days)
+{
+var parsed = Date.parse(d);
+var diff = 24 * 60 * 60 * 1000 * days;
+var newMil = parsed + diff;
+var newDate = new Date(newMil);
+return newDate;
+}
+
+function formatSearchDate(d)
+{
+var dx = d;
+day = dx.getDate();
+month = dx.getMonth();
+year = dx.getFullYear();
+month = month + 1;
+if (day < 10)
+	{
+	day = "0" + day;
+	}
+if (month < 10)
+	{
+	month = "0" + month;
+	}
+returnDate = month + "/" + day + "/" + year;
+return returnDate;
+}
+
+
+function formatPrintDate(d)
+{
+var dx = d;
+day = dx.getDate();
+month = dx.getMonth();
+year = dx.getFullYear();
+month = month + 1;
+if (day < 10)
+	{
+	day = "0" + day;
+	}
+if (month < 10)
+	{
+	month = "0" + month;
+	}
+returnDate = year + "-" + month + "-" + day;
+return returnDate;
+}
+
+
+function getForm()
+{
+$('#formFrame').attr('src', '123ResStart.html');
+$('#formFrame').load(function() 
+    {
+	$('#timeFrame').attr('src', 'http://www.swiftsurepreview1.com/colin/time/time3.php');
+	$('#timeFrame').load(function() 
+ 		{	
+		newBody = $('#formFrame').contents().find('body').html();
+		$('#formArea').html(newBody); 
+		$("#aspnetForm").attr("target","resFrame");
+		formAction = $("#aspnetForm").attr("action");
+		newFormAction = "https://secure.rezovation.com/Reservations/" + formAction;
+		$("#aspnetForm").attr("action",newFormAction);
+		});
+    });	
+}
+
+
+function doResSearch()
+{
+$('#codeTextArea').html("something please");
+$('#formFrame').attr('src', '123ResStart.html');
+$('#formFrame').load(function() 
+    {
+	$('#timeFrame').attr('src', 'http://www.swiftsurepreview1.com/colin/time/time3.php');
+	$('#timeFrame').load(function() 
+ 		{	
+		newBody = $('#formFrame').contents().find('body').html();
+		$('#formArea').html(newBody); 
+		$("#ctl00_Main_availability_ctl00__checkInDate_date").val(checkInDate_input);
+		$("#ctl00_Main_availability_ctl00__checkOutDate_date").val(checkOutDate_input);
+
+		guests = $("#ctl00_Main_availability_ctl00__guests");
+		newGuests = '<input value=8 type=text name="ctl00$Main$availability$ctl00$_guests" id="ctl00_Main_availability_ctl00__guests">';
+		guests.replaceWith(newGuests);
+	
+		formAction = $("#aspnetForm").attr("action");
+		$("#aspnetForm").attr("target","resFrame");
+		newFormAction = "https://secure.rezovation.com/Reservations/" + formAction;
+		formAction = $("#aspnetForm").attr("action",newFormAction);
+		$("#ctl00_Main_availability_ctl00__submit").trigger('click');
+		formLoaded = 1;
+		});
+    });
+}
+</script>
+
+<style>
+#timeFrame
+{
+width: 755px;
+height: 40px;	
+}
+
+#formFrame
+{
+width: 755px;
+height: 50px;	
+}
+
+#resFrame
+{
+width: 755px;
+height: 300px;	
+}
+</style>
+
+</head>
+
+<body>
+
+<div id=debug>
+debug
+</div>
+
+<div id=formArea>
+formArea
+</div>
+
+<br><br>
+
+<form id='submitForm' name='submitForm'>
+</form>
+
+<iframe id='timeFrame' srcx="empty.html" name='frame3'></iframe>
+<br><br>
+
+<iframe id='formFrame' name='formFrame'></iframe>
+<br><br>
+
+<iframe id='resFrame' name='resFrame'></iframe>
+<br><br>
+
+
+
+
+
+</body>
+</html>
+
+<script>
+
+
+function frame1LoadedX()
+{
+theForm = $('#frame1').contents().find('#Form1');
+theForm.attr("target","frame2");
+someHtml = $('#frame1').contents().find('body').html();
+authThere = someHtml.indexOf("authenticate.aspx");
+if (authThere > -1)
+	{
+	$('#frame1').contents().find('#Email').val("mackm@rockisland.com");
+	$('#frame1').contents().find('#Password').val("VisitSanJuan$1");
+	someHtml = $('#frame1').contents().find('body').html();
+	$('body').html(someHtml);
+	$('body').contents().find('#Email').val("mackm@rockisland.com");
+	$('body').append("<iframe id='frame2' src='empty.html' name='frame2'></iframe>");
+	$('body').append("<iframe id='frame3' src='empty.html' name='frame3'></iframe>");
+	$('#Password').val("VisitSanJuan$1");
+	$('#Form1').attr("action", 'https://reserve1.resnexus.com/resnexus/authenticate.aspx?Website=harrisonhousesuites.com');
+	postBackObj = new WebForm_PostBackOptions('Button1', "", true, "", "", false, false)
+	WebForm_DoPostBackWithOptions(postBackObj);
+	$('#frame3').attr('src', 'http://www.swiftsurepreview1.com/colin/time/time3.php');
+	$('#frame3').load(function() 
+ 		{
+		$('#frame2').contents().find('#Form1').attr("action", "https://reserve1.resnexus.com/resnexus/manage/reservations/reservations.aspx");
+		$('#frame2').contents().find('#Form1').attr("target", "resFrame");
+		frame2Html = $('#frame2').contents().find('body').html();
+		frame2Html = "<div class=hide>" + frame2Html + "</div>";
+		$('body').html(frame2Html);
+		$('.gridBox').hide();
+		$('.nav').hide();
+		$('#Legend').hide();
+		//$('body').append("<iframe class=sleepFrame id=sleepFrame name=sleepFrame src=empty.html></iframe>");
+		$('body').append("<iframe class=sleepFrame id=sleepFrameToday name=sleepFrameToday src=empty.html></iframe><br>");
+		$('body').append("<iframe class=resFrame id=resFrameToday name=resFrameToday src=empty.html></iframe>");
+		var i;
+		formX = "<form name=resGrab id=resGrab action=http://www.swiftsurepreview1.com/colin/harrisonRes/harrisonRes.php?resProp=S method=post target=phpFrameXX>";
+		for (i=1;i<=1;i++)
+			{
+			iframeSleepx = "<iframe class=sleepFrame id=sleepFrame" + i + " name=sleepFrame" + i + " src=empty.html></iframe>";	
+			iframex = "<iframe class=resFrame id=resFrame" + i + " name=resFrame" + i + " src=empty.html></iframe>";	
+			itextx = "<textarea class=resText id=resText" + i + " name=resText" + i + " src=empty.html>resText " + i + "</textarea>";
+			formX = formX + itextx;
+			$('body').append(iframeSleepx);
+			$('body').append(iframex);
+			//$('body').append("<iframe class=sleepFrame id=sleepParseFrame name=sleepParseFrame src=empty.html></iframe>");	
+			}
+		formX = formX + "<br><input id=submitResGrab type=submit></form>";
+		$('body').append(formX);
+		$('body').append("<iframe class=phpFrame id=phpFrame name=phpFrame src=empty.html></iframe>");
+		loadResFrames();
+		});
+	}
+}
+
+function loadResFrames()
+{
+var today = new Date();
+month = today.getMonth();
+year = today.getFullYear();
+mNextNum = parseFloat(month) +0;
+iRes = 0;	
+$('#sleepFrameToday').attr('src', 'http://www.swiftsurepreview1.com/colin/time/time3.php');
+$('#sleepFrameToday').load(function() 
+ 	{
+	$('#Form1').attr("target", "resFrameToday");	
+	mToday = $('input[name="today"]');
+	mToday.trigger('click');
+	loopStart = "no";
+	resFrameLoop();
+	});
+}
+
+function resFrameLoop()
+{
+iRes = iRes + 1;
+if (mNextNum == 1 && loopStart == "yes")
+	{
+	someHtml = $("#" + iResFrame).contents().html();
+	//alert(someHtml);
+	}
+loopStart = "yes";
+if (iRes <= 1)
+	{ 
+	$('#sleepFrame' + iRes).attr('src', 'http://www.swiftsurepreview1.com/colin/time/time3.php');
+	$('#sleepFrame' + iRes).load(function() 
+ 		{
+		iResFrame = "resFrame" + iRes;
+		$('#Form1').attr("target", iResFrame);	
+		mNextNum = mNextNum + 1;
+		if (mNextNum == 14)
+			{
+			mNextNum = 2;	
+			}
+		mNow = $('input[name="m' + mNextNum + '"]');
+		mNow.trigger('click');
+		resFrameLoop();		
+		});
+	}
+else
+	{
+//	$('body').append("<iframe class=sleepFrame id=sleepParseFrame name=sleepParseFrame src=http://www.swiftsuremarketing.com/rescurl/harrisonRes/sleep2.php></iframe>");	
+	$('body').append("<iframe class=sleepFrame id=sleepParseFrame name=sleepParseFrame src=empty.html></iframe>");	
+	$('#sleepParseFrame').attr('src', 'http://www.swiftsurepreview1.com/colin/time/time10.php');
+	$('#sleepParseFrame').load(function() 
+		{
+		parseYear = year;	
+		iMonth = 0;	
+		iParse = 0;	
+		resParseLoop();	
+		});
+	}
+}
+
+
+function resParseLoop()
+{
+if (iParse <13)
+	{	
+	iParse = iParse + 1	
+	parseMonth = month + iParse;
+	if (parseMonth >= 13)
+		{
+		parseYear = year + 1;	
+		iMonth = iMonth + 1;	
+		parseMonth = iMonth;	
+		}
+	var gridBoxHtml = $('#resFrame' + iParse).contents().find('.grid').html();
+	var resTextHtml = " iParse:" + iParse + " <month>" + parseMonth + "</month><year> " + parseYear + "</year>" + gridBoxHtml;
+	$("#resText" + iParse).val(resTextHtml);
+	resParseLoop();
+	}
+else
+	{
+	submitResGrab();	
+	}
+}
+</script>

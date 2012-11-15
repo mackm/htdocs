@@ -1,0 +1,21 @@
+name = Birdrock
+description = Theme for Friday Harbor, WA Birdrock Hotel
+package = Core
+version = VERSION
+core = 7.x
+stylesheets[all][] = style.css
+
+regions[header] = Page Header
+regions[content] = Body Text 
+regions[photos] = Top Photos
+regions[tabs] = Tab Navigation
+regions[sidebar_first] = Left Sidebar
+regions[sidebar_second] = Right Sidebar
+regions[footer] = Page Footer 
+
+regions[banner_left] = Banner Left
+regions[banner_center] = Banner Center
+regions[banner_right] = Banner Right
+
+regions[gutter_left] = Gutter Left
+regions[gutter_right] = Gutter Right
