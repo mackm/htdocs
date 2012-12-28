@@ -41,14 +41,13 @@
  */
 $sites['www.swiftsurepreview1.com'] = 'www.visitsanjuans.com';
 $sites['swiftsurepreview1.com'] = 'www.visitsanjuans.com';
-$sites['www.swiftsurepreview2.com'] = 'www.mpt.com';
-$sites['swiftsurepreview2.com'] = 'www.mpt.com';
-$sites['www.swiftsurepreview1.com'] = 'www.visitsanjuans.com';
+$sites['www.swiftsurepreview2.com'] = 'www.birdrockhotel.com';
+$sites['swiftsurepreview2.com'] = 'www.birdrockhotel.com';
 $sites['visitsanjuans.com'] = 'www.visitsanjuans.com';
 $sites['swiftsurepreview1.com'] = 'www.visitsanjuans.com';
 $sites['earthboxinn.com'] = 'www.earthboxinn.com';
-$sites['www.swiftsurepreview3.com'] = 'www.earthboxinn.com';
-$sites['swiftsurepreview3.com'] = 'www.earthboxinn.com';
+// $sites['www.swiftsurepreview3.com'] = 'www.earthboxinn.com';
+// $sites['swiftsurepreview3.com'] = 'www.earthboxinn.com';
 $sites['www.medprotech.com'] = 'www.mpt.com';
 $sites['medprotech.com'] = 'www.mpt.com';
-$sites['localhost'] = 'www.visitsanjuans.com';
+$sites['localhost'] = 'www.wendymccauley.com';
