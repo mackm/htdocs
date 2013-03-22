@@ -39,8 +39,8 @@
  * Edit the lines below to define directory aliases. Remove the leading hash
  * signs to enable.
  */
-$sites['www.swiftsurepreview1.com'] = 'www.visitsanjuans.com';
-$sites['swiftsurepreview1.com'] = 'www.visitsanjuans.com';
+$sites['www.swiftsurepreview1.com'] = 'www.rocheharbor.com';
+$sites['swiftsurepreview1.com'] = 'www.rocheharbor.com';
 $sites['www.swiftsurepreview2.com'] = 'www.birdrockhotel.com';
 $sites['swiftsurepreview2.com'] = 'www.birdrockhotel.com';
 $sites['visitsanjuans.com'] = 'www.visitsanjuans.com';
