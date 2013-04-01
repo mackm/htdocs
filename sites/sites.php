@@ -40,8 +40,8 @@
  * signs to enable.
  */
 $sites['rocheharbor.com'] = 'www.rocheharbor.com';
-/$sites['www.swiftsurepreview1.com'] = 'www.rocheharbor.com';
-/$sites['swiftsurepreview1.com'] = 'www.rocheharbor.com';
+$sites['www.swiftsurepreview1.com'] = 'www.rocheharbor.com';
+$sites['swiftsurepreview1.com'] = 'www.rocheharbor.com';
 $sites['www.swiftsurepreview2.com'] = 'www.birdrockhotel.com';
 $sites['swiftsurepreview2.com'] = 'www.birdrockhotel.com';
 $sites['www.swiftsurepreview3.com'] = 'www.rocheharbor.com';
