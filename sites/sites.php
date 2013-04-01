@@ -40,12 +40,12 @@
  * signs to enable.
  */
 $sites['rocheharbor.com'] = 'www.rocheharbor.com';
-$sites['www.swiftsurepreview1.com'] = 'www.rocheharbor.com';
-$sites['swiftsurepreview1.com'] = 'www.rocheharbor.com';
+/$sites['www.swiftsurepreview1.com'] = 'www.rocheharbor.com';
+/$sites['swiftsurepreview1.com'] = 'www.rocheharbor.com';
 $sites['www.swiftsurepreview2.com'] = 'www.birdrockhotel.com';
 $sites['swiftsurepreview2.com'] = 'www.birdrockhotel.com';
-$sites['www.swiftsurepreview3.com'] = 'www.rocheharbor.com';
-$sites['swiftsurepreview3.com'] = 'www.rocheharbor.com';
+/$sites['www.swiftsurepreview3.com'] = 'www.rocheharbor.com';
+/$sites['swiftsurepreview3.com'] = 'www.rocheharbor.com';
 $sites['visitsanjuans.com'] = 'www.visitsanjuans.com';
 $sites['earthboxinn.com'] = 'www.earthboxinn.com';
 $sites['www.medprotech.com'] = 'www.mpt.com';
