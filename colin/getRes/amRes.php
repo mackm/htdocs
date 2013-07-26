@@ -299,7 +299,7 @@ $dayNum = parseInt($dayRay[$i]);
 return $dateCheckRay;
 //echo("start for each check");
 }
- 
+  
 
 function checkAvail($resCheckStr)
 {
