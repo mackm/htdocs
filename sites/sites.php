@@ -49,5 +49,10 @@ $sites['earthboxinn.com'] = 'www.earthboxinn.com';
 $sites['www.medprotech.com'] = 'www.mpt.com';
 $sites['medprotech.com'] = 'www.mpt.com';
 $sites['swiftsuremarketing.com'] = 'www.swiftsuremarketing.com';
+<<<<<<< HEAD
 $sites['birdrockhotel.com'] = 'www.birdrockhotel.com';
 $sites['localhost'] = 'www.birdrockhotel.com';
+=======
+$sites['localhost'] = 'www.rocheharbor.com';
+
+>>>>>>> f0ccb224c4aa62313399a554515240a32d531f79
