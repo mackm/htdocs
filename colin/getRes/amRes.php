@@ -275,7 +275,7 @@ $dayNum = parseInt($dayRay[$i]);
 	if ($isDate === false)
 		{
 	//echo("date is false<br>");	
-		$errorMessage = "amRes.php invalid date numbers";
+		$errorMessage = "amRes.php invalid date numbers M:".$monthCheck.' D:'.$dayCheck.'Y: '.$yearCheck;
 		errorLog($errorMessage,"unlinkCsv");		
 		}
 	else
@@ -299,7 +299,7 @@ $dayNum = parseInt($dayRay[$i]);
 return $dateCheckRay;
 //echo("start for each check");
 }
-
+ 
 
 function checkAvail($resCheckStr)
 {
