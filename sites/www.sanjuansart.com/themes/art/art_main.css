@@ -1,0 +1,397 @@
+
+/**
+ * @file
+ *
+ * art_main.css - Theme for www.mccauleygallery.com
+ *
+ */
+
+
+/* Include padding within the width, instead of in-addition */ 
+ * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+/* Set up the site for small devices like phones in portrait mode */
+/* Designed to look good between 300px and 400px									*/
+
+html {
+	width:100%;
+  margin:0 auto;
+	text-align:center;
+	font-family:Helvetica, Arial, sans-serif;
+}
+
+body {
+ margin:0 auto;
+ padding:0
+ text-align:center;
+ width:100%;
+ font-size:14px;
+}
+
+#page-wrapper {
+	margin:0 auto;
+	position:relative;
+	width:100%;
+	text-align:left;
+	width:1020px;
+}
+
+#header {
+	margin-top:40px;
+	float:left;
+	width:100%;
+}
+
+#sidebar-first {
+	float:left;
+	width:260px;
+}
+
+#block-views-artists-block {
+	float:left;
+	width:100%;
+	margin-top:50px;
+}
+
+#block-views-artists-block h2 {
+	font-size:14px;
+	text-transform:uppercase;
+	color:#575757;
+	margin:5px 0;
+	font-weight:400;
+}
+
+#block-views-artists-block a {
+	text-transform:uppercase;
+	font-size:12px;
+	color:#999c9d;
+}
+
+#header #top-line {
+	width:100%;
+	float:left;
+	border-bottom: 2px solid #6d7071;
+	position:relative;
+	padding-bottom:2px;
+}
+
+#header #second-line {
+	float:left;
+	margin-top:6px;
+}
+
+#header #top-line .logo,
+#header #second-line .logo {
+	font-size:24px;
+	color:black;
+	width:260px;
+	float:left;
+	letter-spacing:1px;
+}
+
+#header #second-line .logo {
+	padding-left:38px;
+	
+}
+
+#header #top-line .phone,
+#header #top-line .email,
+#header #top-line .address {
+	float:left;
+	position:relative;
+	top:10px;
+	margin-right:35px;
+	font-size:12px;
+	text-transform:uppercase;
+	letter-spacing:1px;
+	color:#999c9d;
+}
+
+#header #top-line .email a {
+	color:#999c9d;
+}
+
+#header #block-system-main-menu {
+	float:left;
+	margin-top:6px;
+}
+
+#header #block-system-main-menu ul {
+	margin:0;
+	padding:0;
+}
+
+#header #block-system-main-menu ul li {
+	display:inline;
+	margin:0 45px 0 0;
+	padding:0;
+	text-transform:uppercase;
+	font-size:12px;
+	letter-spacing:3px;
+}
+
+#header #block-system-main-menu ul li a {
+  color:#999c9d;
+}
+	
+
+#sidebar {
+	float:left;
+	width:260px;
+}
+
+#content {
+	float:right;
+	width:760px;
+}
+
+#content .region-content {
+	margin-left:10px;
+	margin-right:10px;
+}
+
+.view-artist-work .views-field-title {
+	font-size:30px;
+}
+
+.view-artist-work .views-field-title a {
+	color:#6d7071;
+}
+
+.field-name-field-width {
+	float:left;
+}
+
+.field-name-field-height {
+	float:left;
+}
+
+.field-name-field-medium {
+	float:left;
+	clear;right;
+	margin-left:.5em;
+}
+
+.field-name-field-price {
+	float:left;
+	width:100%;
+}
+.page-node .node-readmore,
+.view-artist-work .node-readmore
+{
+	display:none;
+}
+
+.front h1 {
+	display:none;
+}
+
+.node-artist {
+	margin-left:0;
+}
+.view-artists .views-row {
+	margin-bottom:4px;
+}
+
+.node-artwork h2 {
+	font-size:14px;
+	color:black;
+	margin:0;
+}
+
+.node-artwork h2 a {
+	color:black;
+}
+
+.field-name-field-works {
+	float:left;
+	width:100%;
+	margin-bottom:40px;
+}
+
+.field-name-field-works .node-artwork {
+	margin-bottom:40px;
+}
+
+.breadcrumb {
+	display:none;
+}
+
+/* temporary? */
+.page-artist-work h1 {
+	display:none;
+}
+
+/* Home page shows view */
+
+.view-shows .views-field-field-name,
+.view-shows .views-field-field-dates {
+	display:none;
+}
+
+.view-shows .views-row-1 .views-field-field-name,
+.view-shows .views-row-1 .views-field-field-dates {
+	display:block;
+	color: #575757;
+	position:relative;
+	left:-10px;
+	width:700px;
+}
+
+.view-shows .views-row-1 .views-field-field-name {
+	margin-top:20px;
+	font-size:24px;
+	margin-bottom:20px;
+	
+	text-transform:uppercase;
+}
+
+.view-shows .views-row-1 .views-field-field-dates {
+  font-size:18px;
+	margin-bottom:20px;
+}
+
+.view-shows .views-row-2 {
+	margin-top:104px;
+}
+
+.view-shows .field-name-field-artist a {
+	font-size:18px;
+	color:black;
+	margin-bottom:2px;
+	float:left;
+	width:100%;
+}
+
+
+.view-shows .field-name-field-art-image {
+	float:left;
+	width:100%;
+
+}
+
+.view-shows .node-artwork h2{
+	float:left;
+	width:100%;
+	font-size:12px;
+}
+
+.view-shows .views-row {
+	float:left;
+	width:370px;
+	min-height:400px;
+}
+
+.view-shows .field-name-field-height,
+.view-shows .field-name-field-width,
+.view-shows .field-name-field-medium {
+	font-size:10px;
+}
+
+#block-system-main {
+	float:left;
+	width:100%;
+}
+
+.node-page {
+	width:100%;
+	float:left;
+}
+
+.front .node-page {
+	margin-top:40px;
+}
+
+.field-name-field-art-image a img.rss {
+	max-width:350px;
+}
+
+.node-type-page .field-name-body {
+	margin-right:40px;
+}
+
+
+/* Inventory List */
+
+.view-inventory .views-field-title a {
+	float:left;
+	color:black;
+	padding-right:10px;
+}
+
+
+.view-inventory .views-field-field-height,
+.view-inventory .views-field-field-artist,
+.view-inventory .views-field-field-medium,
+.view-inventory .views-field-field-price,
+.view-inventory .views-field-field-price span {
+	float:left;
+	padding-right:10px;
+}
+.view-inventory .views-field-field-price div,
+.view-inventory .views-field-field-width {
+	float:left;
+}
+	
+.view-inventory .views-field-field-art-image {
+	float:left;
+	width:100%;
+}
+
+.view-inventory .views-row {
+	float:left;
+	width:100%;
+	margin-bottom:15px;
+}
+
+/* Individual artwork pages */
+
+.node-type-artwork .field-name-field-artist {
+	float:left;
+	width:100%;
+}
+
+.node-type-artwork .field-name-field-artist a {
+	color:#326077;
+}
+
+.field-name-field-price .sold {
+	background-image:url(images/reddot.png);
+	background-position:left 2px;
+	background-repeat:no-repeat;
+	padding-left:13px;
+	font-size:13px;
+}
+	
+#content ul,
+#content ul li {
+	margin:0;
+	padding:0;
+	list-style-type:none;
+	list-style-image:none;
+	font-size:16px;
+}
+
+#content ul li {
+	margin: 12px 0;
+}
+
+
+/* Special in-gallery slideshow of current works */
+
+.page-show #page-wrapper {
+	width:100%;
+}
+
+.page-show #content {
+	width:100%;
+}
+
+.page-show #content img {
+	max-width:100%;
+}
+
+.page-show #sidebr-first {
+	display:none;
+}
+
