@@ -51,6 +51,6 @@ $sites['medprotech.com'] = 'www.mpt.com';
 $sites['swiftsuremarketing.com'] = 'www.swiftsuremarketing.com';
 $sites['birdrockhotel.com'] = 'www.birdrockhotel.com';
 $sites['localhost'] = 'www.birdrockhotel.com';
-$sites['127.0.0.1'] = 'www.galleryguide.com';
+$sites['127.0.0.1'] = 'www.wendybuffum.com';
 
 
