@@ -42,8 +42,7 @@
 $sites['rocheharbor.com'] = 'www.rocheharbor.com';
 $sites['www.swiftsurepreview1.com'] = 'www.danaroberts.com';
 $sites['swiftsurepreview1.com'] = 'www.danaroberts.com';
-$sites['www.swiftsurepreview3.com'] = 'www.travelsanjuan.com';
-$sites['swiftsurepreview3.com'] = 'www.travelsanjuan.com';
+$sites['travelsanjuan.com'] = 'www.travelsanjuan.com';
 $sites['visitsanjuans.com'] = 'www.visitsanjuans.com';
 $sites['earthboxinn.com'] = 'www.earthboxinn.com';
 $sites['www.medprotech.com'] = 'www.mpt.com';
@@ -53,7 +52,4 @@ $sites['birdrockhotel.com'] = 'www.birdrockhotel.com';
 $sites['mccauleygallery.com'] = 'www.mccauleygallery.com';
 $sites['www.fridayharborartgalleries.com'] = 'www.galleryguide.com';
 $sites['fridayharborartgalleries.com'] = 'www.galleryguide.com';
-$sites['localhost'] = 'www.birdrockhotel.com';
 $sites['127.0.0.1'] = 'www.wendybuffum.com';
-
-
