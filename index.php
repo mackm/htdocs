@@ -1,4 +1,11 @@
 <?php
+/* 
+ * Uncomment this section for debugging WSOD
+ */ 
+error_reporting(E_ALL);
+ini_set('display_errors', TRUE);
+ini_set('display_startup_errors', TRUE);
+
 
 /**
  * @file
