@@ -52,4 +52,4 @@ $sites['birdrockhotel.com'] = 'www.birdrockhotel.com';
 $sites['mccauleygallery.com'] = 'www.mccauleygallery.com';
 $sites['www.fridayharborartgalleries.com'] = 'www.galleryguide.com';
 $sites['fridayharborartgalleries.com'] = 'www.galleryguide.com';
-$sites['127.0.0.1'] = 'www.earthboxinn.com';
+$sites['127.0.0.1'] = 'www.visitsanjuans.com';

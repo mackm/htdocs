@@ -51,7 +51,7 @@ choice for "Add if the following PHP code returns TRUE." Sample PHP snippets
 that can be used in this textarea can be found on the handbook page
 "Overview-approach to block visibility" at http://drupal.org/node/64135.
 
-@TODO: Custom variables
+Custom variables
 =================
 One example for custom variables tracking is the "User roles" tracking. Enter
 the below configuration data into the custom variables settings form under
@@ -72,5 +72,5 @@ code textarea. These can be found on the official Google Analytics pages
 and a few examples at http://drupal.org/node/248699. Support is not
 provided for any customisations you include.
 
-To speed up page loading you may also cache the Google Analytics "analytics.js"
+To speed up page loading you may also cache the Analytics ga.js
 file locally.
