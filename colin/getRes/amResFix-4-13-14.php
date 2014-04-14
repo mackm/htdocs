@@ -103,7 +103,7 @@ $resKey = "resText$iKey";
 $resText = $_POST[$resKey];
 
 
-//echo("<br><br><textarea style='width: 1200px; height: 555px;'>$resText</textarea><br><br>");
+echo("<br><br><textarea style='width: 1200px; height: 555px;'>$resText</textarea><br><br>");
 
 global $csvPath, $fpDebug;
 fwrite($fpDebug, $resText);

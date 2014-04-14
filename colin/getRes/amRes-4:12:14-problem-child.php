@@ -59,14 +59,12 @@ amRes($filePath,13);
 function amRes($filePath,$twoWeekPeriods)
 {
 global $csvPath, $iTwp, $fp;	
-global $csvPath, $fpDebug;
+
 $csvPath = $filePath;
 echo("csvPath: $csvPath<br>");
 
 $iTwp = $twoWeekPeriods;
 $fp = fopen($csvPath, 'w');
-$csvPathDebug = $csvPath . ".debug.php";
-$fpDebug = fopen($csvPathDebug, 'w');
 parseRes("H");
 parseRes("S");
 parseRes("T");
@@ -102,14 +100,6 @@ global $fp;
 $resKey = "resText$iKey";
 $resText = $_POST[$resKey];
 
-
-//echo("<br><br><textarea style='width: 1200px; height: 555px;'>$resText</textarea><br><br>");
-
-global $csvPath, $fpDebug;
-fwrite($fpDebug, $resText);
-
-
-
 $resRay = preg_split('/<tr/', $resText);
 $resRayCnt = count($resRay);
 
@@ -135,10 +125,6 @@ for ($i=0;$i<$resRayCnt; $i++)
 {
 	$gDay = strpos($resRay[$i],'class="gDay">');
 
-
-if (1==2)
-{
-
 	$H0 =	strpos($resRay[$i],'class="r0"><td align="left">H');
 	$H1 =	strpos($resRay[$i],'class="r1"><td align="left">H');
 	$H7 =	strpos($resRay[$i],'"left">H7');
@@ -153,29 +139,6 @@ if (1==2)
 	$TU1 =	strpos($resRay[$i],'class="r1"><td align="left">TU');
 
 	$TU99  = strpos($resRay[$i],'"left">TU99');
-}
-else
-{
-	$H0 =	strpos($resRay[$i],'class="r0"><td class="name">H');
-	$H1 =	strpos($resRay[$i],'class="r1"><td class="name">H');
-	$H7 =	strpos($resRay[$i],'class="name">H7');
-	
-	$S0 =	strpos($resRay[$i],'class="r0"><td class="name">S');
-	$S1 =	strpos($resRay[$i],'class="r1"><td class="name">S');
-
-	$TL0 =	strpos($resRay[$i],'class="r0"><td class="name">TL');
-	$TL1 =	strpos($resRay[$i],'class="r1"><td class="name">TL');
-
-	$TU0 =	strpos($resRay[$i],'class="r0"><td class="name">TU');
-	$TU1 =	strpos($resRay[$i],'class="r1"><td class="name">TU');
-
-	$TU99  = strpos($resRay[$i],'class="name">TU99');
-
-	
-	
-}
-	
-	
 
 	if ($gDay > 0 )
 	{
